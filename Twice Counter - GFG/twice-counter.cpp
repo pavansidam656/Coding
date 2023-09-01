@@ -10,7 +10,7 @@ class Solution
         int countWords(string list[], int n)
         {
            //code here.
-            map<string, int> m;
+            unordered_map<string, int> m;
             for(int i=0;i<n;i++){
                 m[list[i]]++;
             }
