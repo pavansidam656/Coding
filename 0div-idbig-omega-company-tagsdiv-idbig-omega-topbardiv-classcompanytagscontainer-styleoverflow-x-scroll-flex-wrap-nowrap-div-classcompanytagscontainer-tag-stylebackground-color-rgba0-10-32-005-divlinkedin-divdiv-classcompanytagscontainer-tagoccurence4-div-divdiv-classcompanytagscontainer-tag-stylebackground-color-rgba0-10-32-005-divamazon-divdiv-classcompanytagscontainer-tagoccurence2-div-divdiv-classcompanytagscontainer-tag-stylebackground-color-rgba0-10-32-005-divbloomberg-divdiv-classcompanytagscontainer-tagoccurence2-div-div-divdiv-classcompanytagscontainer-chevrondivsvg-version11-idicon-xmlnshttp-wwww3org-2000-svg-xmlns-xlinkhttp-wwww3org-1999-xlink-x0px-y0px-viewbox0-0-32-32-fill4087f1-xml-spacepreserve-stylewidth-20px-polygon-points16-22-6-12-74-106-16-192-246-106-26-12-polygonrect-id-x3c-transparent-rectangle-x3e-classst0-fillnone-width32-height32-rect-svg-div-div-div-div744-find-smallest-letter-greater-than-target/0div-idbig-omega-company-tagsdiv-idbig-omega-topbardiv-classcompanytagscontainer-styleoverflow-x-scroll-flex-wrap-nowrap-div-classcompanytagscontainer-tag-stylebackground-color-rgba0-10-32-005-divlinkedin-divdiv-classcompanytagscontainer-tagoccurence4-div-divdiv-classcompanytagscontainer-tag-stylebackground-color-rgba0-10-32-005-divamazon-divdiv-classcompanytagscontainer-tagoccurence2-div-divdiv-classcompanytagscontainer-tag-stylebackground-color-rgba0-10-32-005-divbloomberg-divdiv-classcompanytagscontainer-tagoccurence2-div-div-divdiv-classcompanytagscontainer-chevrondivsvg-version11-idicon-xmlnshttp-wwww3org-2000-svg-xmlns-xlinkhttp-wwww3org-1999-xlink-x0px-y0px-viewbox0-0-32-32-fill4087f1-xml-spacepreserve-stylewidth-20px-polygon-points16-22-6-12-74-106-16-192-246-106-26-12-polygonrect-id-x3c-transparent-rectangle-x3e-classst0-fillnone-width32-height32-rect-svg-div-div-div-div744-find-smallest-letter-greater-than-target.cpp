@@ -18,6 +18,6 @@ public:
 
         // After the loop, 'start' is the position where the target should be inserted.
         // If 'start' is out of bounds, wrap around to the first letter.
-        return start < letters.size() ? letters[start] : letters[0];
+        return letters[start%letters.size()];
     }
 };
