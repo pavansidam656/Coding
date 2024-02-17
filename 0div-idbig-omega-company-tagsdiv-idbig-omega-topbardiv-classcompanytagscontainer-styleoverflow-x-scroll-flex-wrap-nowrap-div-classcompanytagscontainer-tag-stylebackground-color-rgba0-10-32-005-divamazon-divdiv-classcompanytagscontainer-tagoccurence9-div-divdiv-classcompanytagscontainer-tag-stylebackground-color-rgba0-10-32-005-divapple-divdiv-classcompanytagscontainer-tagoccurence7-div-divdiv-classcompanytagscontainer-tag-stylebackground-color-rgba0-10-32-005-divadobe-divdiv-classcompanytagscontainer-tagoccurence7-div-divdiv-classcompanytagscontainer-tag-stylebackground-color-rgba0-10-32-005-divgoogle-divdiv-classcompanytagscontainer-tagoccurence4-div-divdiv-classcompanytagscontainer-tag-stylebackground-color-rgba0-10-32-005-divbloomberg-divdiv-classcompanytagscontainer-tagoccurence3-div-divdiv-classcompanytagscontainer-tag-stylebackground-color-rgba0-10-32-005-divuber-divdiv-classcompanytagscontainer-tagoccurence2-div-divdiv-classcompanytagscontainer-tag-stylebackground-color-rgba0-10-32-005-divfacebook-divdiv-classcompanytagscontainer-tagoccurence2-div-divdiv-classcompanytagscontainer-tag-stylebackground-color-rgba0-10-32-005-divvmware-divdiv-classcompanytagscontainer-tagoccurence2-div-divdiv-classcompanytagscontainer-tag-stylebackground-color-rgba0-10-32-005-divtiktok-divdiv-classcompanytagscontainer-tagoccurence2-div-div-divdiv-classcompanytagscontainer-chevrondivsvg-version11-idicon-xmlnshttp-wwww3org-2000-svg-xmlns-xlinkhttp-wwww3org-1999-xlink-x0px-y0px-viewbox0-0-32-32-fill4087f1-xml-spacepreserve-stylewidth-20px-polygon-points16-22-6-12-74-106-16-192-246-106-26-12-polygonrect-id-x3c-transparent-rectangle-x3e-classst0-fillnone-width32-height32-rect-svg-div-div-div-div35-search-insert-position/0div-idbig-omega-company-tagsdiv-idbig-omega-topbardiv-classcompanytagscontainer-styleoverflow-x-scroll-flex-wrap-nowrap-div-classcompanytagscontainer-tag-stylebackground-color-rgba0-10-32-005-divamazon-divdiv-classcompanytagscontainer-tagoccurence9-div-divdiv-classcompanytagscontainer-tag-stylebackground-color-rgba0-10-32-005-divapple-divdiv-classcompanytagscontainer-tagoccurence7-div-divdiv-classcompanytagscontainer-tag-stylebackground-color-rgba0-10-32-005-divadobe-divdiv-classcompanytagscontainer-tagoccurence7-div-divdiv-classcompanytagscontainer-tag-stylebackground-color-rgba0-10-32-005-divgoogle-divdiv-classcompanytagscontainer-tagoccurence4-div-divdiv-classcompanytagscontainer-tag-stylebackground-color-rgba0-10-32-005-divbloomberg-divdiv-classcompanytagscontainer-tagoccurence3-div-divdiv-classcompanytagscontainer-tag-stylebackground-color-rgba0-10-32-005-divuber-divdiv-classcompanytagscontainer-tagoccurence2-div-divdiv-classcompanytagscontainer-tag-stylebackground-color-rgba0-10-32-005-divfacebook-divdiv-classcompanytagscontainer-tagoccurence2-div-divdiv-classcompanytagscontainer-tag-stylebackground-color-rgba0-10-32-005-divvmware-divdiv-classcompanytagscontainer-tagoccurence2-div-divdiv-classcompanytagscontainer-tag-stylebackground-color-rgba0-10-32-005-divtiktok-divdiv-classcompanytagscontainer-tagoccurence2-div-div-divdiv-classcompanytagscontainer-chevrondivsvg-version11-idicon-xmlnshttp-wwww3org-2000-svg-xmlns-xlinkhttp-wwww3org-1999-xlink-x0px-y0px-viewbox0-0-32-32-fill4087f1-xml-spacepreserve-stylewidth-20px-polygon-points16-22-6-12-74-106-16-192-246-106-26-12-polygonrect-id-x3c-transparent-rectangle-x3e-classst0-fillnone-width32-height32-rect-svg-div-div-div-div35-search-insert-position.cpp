@@ -1,24 +1,17 @@
-#include <vector>
-using namespace std;
-
 class Solution {
 public:
     int searchInsert(vector<int>& nums, int target) {
-        int left = 0, right = nums.size() - 1;
-
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-
-            if (nums[mid] == target) {
-                return mid;
-            } else if (nums[mid] < target) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
+        int start=0,end=nums.size()-1;
+        while(start<=end){
+            int mid=start+(end-start)/2;
+            if(nums[mid]==target) return mid;
+            else if(nums[mid]>target){
+                end=mid-1;
+            }
+            else{
+                start=mid+1;
             }
         }
-
-        // If the target is not found, 'left' is the position where it should be inserted.
-        return left;
+        return start;
     }
 };
